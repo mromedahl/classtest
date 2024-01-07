@@ -16,7 +16,9 @@ class Dog {
     string name;
     string breed;
     string age;
-    string maxSpeed;
+    int maxSpeed;
+    int heigth;
+
 
 public:
     void display()
@@ -85,9 +87,14 @@ int main()
     }
     Dog::display_total_dogs();
 
-    for ( int i = 0; i < num_dogs; i++ ) {
-        dogs[i]->display();
+//    for ( int i = 0; i < num_dogs; i++ ) {
+//        dogs[i]->display();
+//    }
+    
+    for(auto & i : dogs) {
+        i->display();
     }
+    
     for ( int i = 0; i < num_dogs; i++ ) {
         delete dogs[i];
     }
