@@ -11,11 +11,12 @@
 using namespace std;
 
 class Dog {
-private:
+//private:
     static int totaldogs;
     string name;
     string breed;
     string age;
+    string maxSpeed;
 
 public:
     void display()
@@ -41,17 +42,41 @@ public:
     }
 };
 
+class Car {
+public:
+    string brand;
+    int year;
+    int miles;
+    
+    void print()
+    {
+        cout << "Miles: " << miles << endl;
+    }
+    
+    void increment_miles()
+    {
+        miles++;
+    }
+};
+
+void long_drive(Car &c)
+{
+    c.increment_miles();
+    c.increment_miles();
+    c.increment_miles();
+}
+
 int Dog::totaldogs = 0;
 
 int main()
 {
-/*
+
     Dog* dog1 = new Dog("Buster", "Altesian", "5");
     dog1->display();
     Dog::display_total_dogs();
     delete dog1;
     Dog::display_total_dogs();
-*/
+
     int num_dogs = 10;
     std::vector<Dog*> dogs( num_dogs );
     for ( int i = 0; i < num_dogs; i++ ) {
@@ -67,7 +92,17 @@ int main()
         delete dogs[i];
     }
     Dog::display_total_dogs();
-
+    
+    cout << "NÄMEN" << endl;
+    
+    Car car1;
+    
+    car1.print();
+    
+    long_drive(car1);
+    
+    car1.print();
+    
     return 0;
 }
 
